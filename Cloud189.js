@@ -268,11 +268,11 @@ const main = async () => {
     userNameInfo = mask(firstUserName, 3, 7);
     const capacityChange = familyCapacitySize2 - familyCapacitySize;
     logger.log(`主账号${userNameInfo} 家庭容量+ ${capacityChange / 1024 / 1024}M`);
-    
+
     cloudClient.setCookieMap(CookiesMap.get(firstUserName))
     let { cloudCapacityInfo: cloudCapacityInfo2, familyCapacityInfo: familyCapacityInfo2 } = await cloudClient.getUserSizeInfo();
     logger.log(
-      `${firstSpace}主账号个人总容量：${(cloudCapacityInfo2.totalSize / 1024 / 1024 / 1024).toFixed(2)}G, 家庭总容量：${(familyCapacityInfo2.totalSize / 1024 / 1024 / 1024).toFixed(2)}G`
+      `主账号个人总容量：${(cloudCapacityInfo2.totalSize / 1024 / 1024 / 1024).toFixed(2)}G, 家庭总容量：${(familyCapacityInfo2.totalSize / 1024 / 1024 / 1024).toFixed(2)}G`
     );
     logger.log("");
 
