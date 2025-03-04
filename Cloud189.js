@@ -32,8 +32,8 @@ const doTask = async (cloudClient) => {
   let timeout = 40000; // 40秒
   let abortController = new AbortController(); // 创建 AbortController
 
-  const result = [];
-  const signPromises1 = [];
+  let result = [];
+  let signPromises1 = [];
   let getSpace = [`${firstSpace}签到个人云获得(M)`];
 
   if (env.private_only_first == false || i == 1) {
